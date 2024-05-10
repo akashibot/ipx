@@ -221,7 +221,7 @@ export const gamma: Handler = {
 export const negate: Handler = {
   args: [VArgument, VArgument, VArgument],
   apply: (_context, pipe, alpha) => {
-    return pipe.negate({ alpha: Boolean(alpha) ?? false });
+    return pipe.negate({ alpha: Boolean(alpha ?? false) });
   },
 };
 
