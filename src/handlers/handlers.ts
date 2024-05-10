@@ -220,8 +220,8 @@ export const gamma: Handler = {
 // https://sharp.pixelplumbing.com/api-operation#negate
 export const negate: Handler = {
   args: [VArgument, VArgument, VArgument],
-  apply: (_context, pipe) => {
-    return pipe.negate({ alpha: false });
+  apply: (_context, pipe, alpha) => {
+    return pipe.negate({ alpha: Boolean(alpha) ?? false });
   },
 };
 
